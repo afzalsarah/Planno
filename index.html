@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="sp.css">
+    <link rel="stylesheet" href="foot-2.css">
+
+    <title> Task Planner 2020 </title>
+</head>
+
+<body>
+    <!--   Top bar in grey color -->
+    <div id="gap" class="container-fluid" align="center">
+        <p></p>
+        <!-- Navigation Bar Starts here -->
+        <nav class="navbar">
+            <ul>
+                <li><img src="logo-2.png " alt="Task Planner Sarah logo" width="45px " height="35px "></li>
+                <li><a href="#DB">DashBoard</a></li>
+                <li><a href="#Goals">Goals</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Team">Team</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="gap" class="container-fluid" align="center">
+        <h1 class="h1style">Organize your Priorities</h1>
+        <h1>Planno Dashboard</h1>
+        <img src="logo-2.png" width="45px " height="35px " alt="Task Planner Logo">
+        <!--    Cover photo with text headline  -->
+        <hr>
+    </div>
+    <br><br><br>
+    <div id="gap" class="container-fluid" align="center">
+        <button type="button" class="btnz" id="addTask" data-toggle="modal" data-target="#myModal">Add New Task</button>
+        <button type="button" class="btnz" id="dpSTask">Show All Tasks</button>
+        <button type="button" class="btnz" id="delallTasks">Delete All Tasks</button>
+
+    </div>
+    <hr>
+    <!--    Three Cards Deck starts here-->
+    <!--<div id="main-container" class="dck container-fluid ">
+        h1 class="h1style">Task Details</h1>
+
+        <!--   main container div -->
+
+    <div class="card-deck" id="taskcontainer">
+        <div id="cList" class="card">
+            <!-- <a href="https://www.w3schools.com/"><img class="card-img-top " src="mob.png " alt="Card image "></a>
+                   -->
+            <div class="card-body">
+                <h1>Task Details</h1>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <button class="btnz" id="dbutton">Delete</button>
+                <button class="btnz" id="ebutton">Update</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br>
+    <!-- Modal -->
+    <!-- Adding tasks in Modal here -->
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Tasks</h4>
+                    <button type="button" class="close" id="aBtn" data-dismiss="modal">&times;</button>
+
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <!-- <span id="demo"></span> -->
+                            <label for="inputname">Task Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Task Name" id="text1">
+                            <!-- <input type="text" id="text1"></input> -->
+                            <span id="nmErrMsg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="InputDetails">Description</label>
+                            <textarea class="form-control" rows="2" id="des"></textarea>
+                            <!-- <input type="text" class="form-control" id="des" rows=6></input> -->
+                            <span id="nmErrMsg1"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputname">Assignee</label>
+                            <input type="text" class="form-control" id="assignee"></input>
+                            <span id="nmErrMsg2"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputname">Due Date</label>
+                            <input type="datetime-local" class="form-control" id="dDate">
+                            <!-- <input type="text" id="dDate"></input> -->
+                            <span id="nmErrMsg3"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <div class="options">
+                                <select id="sTatus" name="status">
+                                    <option value="Pick an option">Please Choose</option>
+                                    <option value="To Do">Review</option>
+                                    <option value="Review">To-do</option>
+                                    <option value="In progress">In Progress</option>
+                                    <option value="Done">Done</option>
+                                </select>
+                                <span id="nmErrMsg"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="button" class="btnz" id="addButton" value="Save"></input>
+                    <button type="button" class="btnz" data-dismiss="modal">Cancel</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Edit  Modal -->
+    <div id="ediTModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Update Task</h4>
+                    <button type="button" class="close" id="eBtn" data-dismiss="modal">&times;</button>
+
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="inputId"></label>
+                            <input type="text" id="tId" disabled></input>
+                            <span id="nmErrMsg"></span>
+                        </div>
+                        <div class="form-group">
+                            <!-- <span id="demo"></span> -->
+                            <label for="inputname">Task Name</label>
+                            <input type="text" class="form-control" id="ename"></input>
+                            <span id="nmErrMsg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="InputDetails">Description</label>
+                            <input type="text" class="form-control" id="edes" rows=6></input>
+                            <span id="nmErrMsg1"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputname">Assignee</label>
+                            <input type="text" class="form-control" id="eAssignee"></input>
+                            <span id="nmErrMsg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputname">Due Date</label>
+                            <input type="datetime-local" class="form-control" id="edDate"></input>
+                            <span id="nmErrMsg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <div class="options">
+                                <select id="esTatus" name="estatus">
+                                    <option value="Pick an option">Please Choose</option>
+                                    <option value="To Do">Review</option>
+                                    <option value="Review">To-do</option>
+                                    <option value="In progress">In Progress</option>
+                                    <option value="Done">Done</option>
+                                </select>
+                                <span id="nmErrMsg"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="button" class="btnz" id="upDateButton" value="Update"></input>
+                    <button type="button" class="btnz" data-dismiss="modal">Cancel</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- *************************footer start************************* -->
+    <!--   Footer Starts here-->
+
+    <footer class="mainfooter " role="contentinfo ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-sm-2 col-md-2 ">
+                    <!--Column1-->
+                    <div class="footer-pad ">
+
+                        <img src="logo-2.png " alt="Task Planner Sarah logo" width="60px " height="50px ">
+                    </div>
+                </div>
+                <div class="col-sm-2 col-md-2 ">
+
+                </div>
+                <div class="col-md-3 col-lg-6 " align="center ">
+                    <!--Column1-->
+                    <div class="footer-pad ">
+                        <h4>Find us at Social Media Platforms
+                        </h4>
+                        <ul class="social-network social-circle ">
+                            <li><a href="# " class="icoFacebook " title="Facebook "><i class="fa fa-facebook "></i></a></li>
+                            <li><a href="# " class="icoFacebook " title="Pinterest "><i class="fa fa-pinterest "></i></a></li>
+                            <li><a href="# " class="icoLinkedin " title="Twitter "><i class="fa fa-twitter "></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </footer>
+    <!--   Footer Ends here -->
+
+    <!-- **************************** footer ends *********************/ -->
+
+
+    <script src="myscript.js"></script>
+
+
+
+
+</body>
+
+</html>
